@@ -9,10 +9,6 @@ describe('createStore', () => {
 
   })
 
-  it('initial state is equal to the state passed in as arg', () => {
-
-  })
-
   it('returns an object with a `getState` helper function', () => {
 
   })
@@ -33,7 +29,15 @@ describe('createStore', () => {
 
   })
 
-  it('`dispatch` emits an action that updates the state of the store', () => {
+  it('initial state is equal to the state passed in as arg', () => {
+
+  })
+
+  it('`dispatch` of an increment action increases the value of the counter state', () => {
+
+  })
+
+  it('`dispatch` of a decrement action decreases the value of the counter state', () => {
 
   })
 
