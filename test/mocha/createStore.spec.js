@@ -3,7 +3,6 @@ import { assert, expect } from 'chai'
 
 import { createStore } from '../../src/store'
 
-const RESET = 'RESET'
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 
