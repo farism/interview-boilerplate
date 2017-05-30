@@ -102,7 +102,6 @@ describe('connect', () => {
     )(Component)
 
     const wrapper = mount(<Connected/> , {context: {store}} )
-    console.log(wrapper.find(Component))
   })
 
 })
