@@ -5,11 +5,15 @@ import connect from '../../src/connect'
 
 describe('provider', () => {
 
-  it('is a react component that accepts `store` as a prop', () => {
+  it.skip('is a react component that accepts `store` as a prop', () => {
 
   })
 
-  it('provides redux store as context', () => {
+  it.skip('provides redux store as context', () => {
+
+  })
+
+  it.skip('accepts a single child element', () => {
 
   })
 
