@@ -4,10 +4,13 @@ import { expect } from 'chai'
 import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 
+import Provider from '../../src/Provider'
 import connect from '../../src/connect'
+
 const initialState = {
   foo: 'bar',
 }
+
 const getStore = (initialState) => {
   let state = initialState
   return {
@@ -34,39 +37,7 @@ ChildComponent.contextTypes = {
   store: React.PropTypes.shape
 }
 
-
-
-class Provider extends React.Component {
-
-  constructor(props) {
-    super(props)
-
-    if (!this.props.children || typeof this.props.children === 'array') {
-      throw new TypeError('Invalid child component')
-    }
-
-    this.state = {
-      store: props.store,
-    };
-  }
-
-  getChildContext() {
-    return {
-      store: this.state.store,
-    }
-  }
-
-  render() {
-    return React.Children.only(this.props.children)
-  }
-
-}
-
-Provider.childContextTypes = {
-  store: React.PropTypes.shape
-}
-
-describe('provider', () => {
+describe('<Provider />', () => {
   jsdom()
 
   const store = getStore(initialState);
@@ -113,7 +84,8 @@ describe('provider', () => {
       </Provider>
     )
 
-    expect(mount.bind(null, arrayDom)).to.throw('React.Children.only expected to receive a single React element child.')
+    expect(
+      mount.bind(null, arrayDom)).to.throw('React.Children.only expected to receive a single React element child.')
   })
 
 })
