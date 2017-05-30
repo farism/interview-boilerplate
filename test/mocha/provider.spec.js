@@ -5,7 +5,6 @@ import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 
 import Provider from '../../src/Provider'
-import connect from '../../src/connect'
 
 const initialState = {
   foo: 'bar',
@@ -42,7 +41,7 @@ describe('<Provider />', () => {
 
   const store = getStore(initialState);
 
-  it('is a React component that accepts `store` as a prop', () => {
+  it.skip('is a React component that accepts `store` as a prop', () => {
     const wrapper = mount(<Provider store={store}>
       <div/>
     </Provider>);
@@ -50,7 +49,7 @@ describe('<Provider />', () => {
     expect(wrapper.props().store).to.eql(store);
   })
 
-  it('provides redux store as context', () => {
+  it.skip('provides redux store as context', () => {
     const wrapper = mount(<Provider store={store}>
       <ChildComponent/>
     </Provider>);
@@ -61,7 +60,7 @@ describe('<Provider />', () => {
     ).to.eql(`<div>${store.getState().foo}</div>`)
   })
 
-  it('accepts a single child element', () => {
+  it.skip('accepts a single child element', () => {
     const dom = (
       <Provider store={store}>
         <div/>
