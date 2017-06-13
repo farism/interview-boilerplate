@@ -38,15 +38,15 @@ describe('createStore', () => {
 
   describe('store object', () => {
 
-    it.skip('initial state is equal to the state passed in as arg', () => {
-      expect(store.getState()).to.equal(initialState)
-    })
-
     it.skip('#getState() property is a function', () => {
       assert.isFunction(store.getState, 'getState is a function')
     })
 
     it.skip('#getState() returns the current state of the store', () => {
+      expect(store.getState()).to.equal(initialState)
+    })
+
+    it.skip('initial state is equal to the state passed in as arg', () => {
       expect(store.getState()).to.equal(initialState)
     })
 
